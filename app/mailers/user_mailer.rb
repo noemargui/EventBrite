@@ -3,14 +3,11 @@ class UserMailer < ApplicationMailer
   default from: 'no-reply@monsite.fr'
 
   def welcome_email(user)
-    #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
-    @user = user
+    @user = user #récupère instance user pour la passer à la view en @user
 
-    #on définit une variable @url qu'on utilisera dans la view d’e-mail
-    @url  = 'http://monsite.fr/login'
+    @url  = 'http://monsite.fr/login', #définit une variable @url qu'on utilisera dans la view d’e-mail
 
-    # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
-    mail(to: @user.email, subject: 'Bienvenue chez nous !')
+    mail(to: @user.email, subject: 'Bienvenue chez nous !') # l'appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet
   end
 
 end

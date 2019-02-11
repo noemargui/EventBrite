@@ -5,8 +5,8 @@ class Attendance < ApplicationRecord
   belongs_to :attendee, class_name: "User"
   belongs_to :event
 
-# méthode pour le mailing
-  def newattendee_send #Quand un participant participe à un événement, envoie un email au créateur de l'événement
+# le mailing
+  def newattendee_send #Envoie d'un email au créateur de l'événement quand qqn participe à son event
     AdminMailer.newattendee_email(self).deliver_now
   end
 
