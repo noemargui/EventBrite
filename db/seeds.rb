@@ -12,15 +12,15 @@ Event.destroy_all
 Attendance.destroy_all
 
 
-6.times do
-  User.create!(first_name: Faker::Name.unique.first_name, last_name: Faker::Name.unique.last_name, email: Faker::Internet.unique.email, description: Faker::Lorem.characters(25))
-end
-
 10.times do
-  Event.create!(admin_id: User.all.sample.id, location: "Paris", price: rand(1..1000), title: Faker::Lorem.characters(10), description: Faker::Lorem.characters(25), duration: rand(1..10)*5, start_date: Time.now + 1.day)
+  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.unique.last_name, email: Faker::Internet.unique.email, description: Faker::Lorem.characters(25))
 end
 
-5.times do
+7.times do
+  Event.create!(admin_id: User.all.sample.id, location: "Paris", price: rand(1..1000), title: Faker::Lorem.characters(10), description: Faker::Lorem.characters(25), duration: rand(1..10)*5, start_date: Faker::Time.forward(90, :morning))
+end
+
+20.times do
   event = Event.all.sample
   Attendance.create!(event_id: Event.all.sample.id, attendee_id: User.all.sample.id)
 end
