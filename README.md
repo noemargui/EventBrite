@@ -1,24 +1,21 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  ### 🕺🏻 EVENT BRAAAAAAAA ITE 🕺
 
-Things you may want to cover:
+  *Notre chère et tendre app Rails de gestion d'événements.*
 
-* Ruby version
+  <h2> Notre précieux :</h2>
 
-* System dependencies
+  Ce programme comprend:</br>
+  Les trois models, avec leurs attributs</br>
+  Les validations</br>
+  Les tests unitaires de models</br>
+  Un seed</br>
+  Le mailer</br>
 
-* Configuration
+  <h2> Eventbritement vôtre.</h2>
 
-* Database creation
+  *Note: dans un tout autre registre, ne pas oublier de faire un petit bundle install, un rails db:create, un rails db:migrate, et enfin un rails db:seed.
 
-* Database initialization
+  *Ne pas hésiter à afficher les tables en consoles, et à tester les associations, qui normalement sont aux petits oignons 🥙*
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+   ### @Noé & @Vince
