@@ -1,11 +1,11 @@
 class Event < ApplicationRecord
-  #belongs_to :admin, class_name: "User"
-  #has_many :attendances
-  #has_many :users, foreign_key: 'attendee_id'
+  belongs_to :admin, class_name: "User"
+  has_many :attendances
+  has_many :users, foreign_key: 'attendee_id'
 
   validates :start_date, presence: true
 =begin
-  validates :duration, 
+  validates :duration,
     presence: true,
     numericality: { only_integer: true, :greater_than_or_equal_to => 0 }
   validates :title,
