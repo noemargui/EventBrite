@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
 
+  belongs_to :admin, class_name: "User"
   has_many :attendances
-  has_many :attendees, class_name: 'User',  through: :attendances
-  belongs_to :admin, :foreign_key => :admin_id, class_name: 'User'
+  has_many :users, foreign_key: 'attendee_id'
 
   #validate :must_begin_in_the_future
   #validate :duration_multiple_of_five
