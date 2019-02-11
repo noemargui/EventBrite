@@ -1,5 +1,5 @@
 
-  ### 🕺🏻 EVENT BRAAAAAAAA ITE 🕺
+  <h1> 🕺🏻 EVENT BRAAAAAAAA ITE 🕺 </h1>
 
   *Notre chère et tendre app Rails de gestion d'événements.*
 
