@@ -1,8 +1,13 @@
-
+<% if user_signed_in? %>
+  <h4>Bienvenue <%= current_user.first_name %></h4>
+  <p><%= link_to "Nouveau EVENT", new_event_path, class: "btn-dark btn p-1" %></p>
+<% else %>
+  <h2>Bienvenue, connecte-toi !!!</h2>
+<% end %>
 
 <br><br><br><p id="notice"><%= notice %></p><center>
 
-<h1>Events</h1><center>
+<center><h1>Events</h1><center>
 
 <table>
   <thead>
@@ -14,11 +19,24 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= link_to 'Show', event %></td>
+      <td> <%= event.title %> </br>
+          <%= event.description %> </br>
+          <%= event.start_date.strftime("%m/%d/%y") %>
+          <%= event.start_date.strftime("%H:%M") %>
+          <% hours = event.duration / 60 %>
+          <% rest = event.duration % 60 %>
+             - Durée : <%= hours %> h <%=rest%></p>
+        <%= link_to 'Show', event %>
+        <%= link_to 'Edit', edit_event_path(event) %>
+        <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></br>
+      </td>
+
+<!--         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+
       </tr>
-    <% end %>
+    <% end %></br>
   </tbody>
 </table>
 
