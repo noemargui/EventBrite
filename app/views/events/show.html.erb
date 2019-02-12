@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+
+ <h1> <%= @event.title %> </h1>
+ <p>
+ Description : </br>
+  <%= @event.description %></p>
+
+ <p>
+ Où ? <%= @event.location %></br>
+ Quand ? <%= @event.start_date.strftime("%m/%d/%y") %>
+  <%= @event.start_date.strftime("%H:%M") %></br>
+ Fin ? A FAIRE !!!!!!!</br>
+ Et le prix ? <%= @event.price %>€</br>
+</p>
+
+<p>
+  Contacter le créateur de l'évènement : <%=@event.admin.email %>
+</p>
+
+<p>
+  Nombre de participants : <%=@event.attendances.count %> participants
+</p>
